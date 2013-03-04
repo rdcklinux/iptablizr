@@ -11,17 +11,17 @@ iniciar el servicio de iptables.
 detiene el servicio de iptables.
 `scripts/stop`
 
-iniciar automaticamente el servicio.
+iniciar automáticamente el servicio.
 `scripts/iptables-service start|stop|restart`
 
-para que el servicio cargue automaticamente al iniciar el sistema
+para que el servicio cargue automáticamente al iniciar el sistema
 este debe ser cargado con:
 `sudo update-rc.d iptables-service defaults`
 
 comandos para permitir o bloquear un dominio o una ip
 `command/addhost <alias> <tipo:domain|ip> <hostname|ip> <regla:deny|allow>`
 
-comando para permitir o bloquear un puerto y su protocolo
+comando para permitir o bloquear un puerto y su protocolo (prontamente estará disponible)
 `command/addport <alias> [protocolo:tcp|udp] <port> <regla:deny|allow>`
 
 ##configuración
