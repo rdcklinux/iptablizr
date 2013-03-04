@@ -84,6 +84,8 @@ ip que no esta en la subred del adaptador que tiene salida a internet.
 este archivo define por defecto los parametros iniciales de iptables generalmente no es necesario modificarlo
 a menos que se necesite hacer algo especial.
 
+##Utilidades
+
 `utils/getsubnet`
 
 esta utilidad te permitira obtener las ip o subredes de un dominio.
