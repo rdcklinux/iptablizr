@@ -1,9 +1,9 @@
 #iptablizr
 
 iptables fácil para ti, es una utilidad completamente programada en bash, que ocupa comandos de sistema basicos
-para entornos LINUX/UNIX Like, esto lo hace potente, rapido y liviano ademas de fácil.
+para entornos LINUX/UNIX Like, esto lo hace potente, rápido y liviano además fácil.
 
-##comandos basicos
+##comandos básicos
 iniciar el servicio de iptables.
 `scripts/start`
 
