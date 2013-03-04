@@ -20,7 +20,7 @@ este debe ser cargado con:
 
 `sudo update-rc.d iptables-service defaults`
 
-`command/addhost <alias> <**domain|**ip> <hostname|ip> <**deny|**allow>`
+`command/addhost <alias> <`**domain|**ip`> <hostname|ip> <`**deny|**allow`>`
 
 comandos para permitir o bloquear un dominio o una ip
 
