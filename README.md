@@ -97,14 +97,20 @@ esta utilidad es ocupada por los comandos que incluye esta herramienta.
 
 ####default
    
-   comandos iptables por defecto para la regla de permitir
+   comandos iptables por defecto para la regla permitir
 
 otros archivos que se encuentren en este directorio son reglas para permitir servicios, dominios, etc..
 
 ###rules.d/deny
 
 ####default
-   comando iptables por defecto para laregla de denegar
+
+   comando iptables por defecto para la regla denegar
 
 otros archivos que se encuentren en este directorio son reglas para denegar servicio, dominios, etc...
+
+##Extras
+
+sugerencias o nuevas ideas son todas bienvenidas.
+
 
