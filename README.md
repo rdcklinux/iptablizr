@@ -80,3 +80,15 @@ init.d/reset
 este archivo define por defecto los parametros iniciales de iptables generalmente no es necesario modificarlo
 a menos que se necesite hacer algo especial.
 
+utils/getsubnet
+
+esta utilidad te permitira obtener las ip o subredes de un dominio.
+esta utilidad es ocupada por los comandos que incluye esta herramienta.
+
+Estructura de Directorios
+
+rules.d/allow
+== default
+   comandos iptables por defecto para la regla de permitir
+   otros archivos que se encuentren en este directorio son reglas para permitir servicios, dominios, etc..
+   
