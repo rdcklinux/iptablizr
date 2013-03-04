@@ -4,27 +4,25 @@ iptables fácil para ti, es una utilidad completamente programada en bash, que o
 para entornos LINUX/UNIX Like, esto lo hace potente, rapido y liviano ademas de fácil.
 
 ##comandos basicos
-
+iniciar el servicio de iptables.
 `scripts/start`
 
-inicia el servicio de iptables
 
+detiene el servicio de iptables.
 `scripts/stop`
 
-detiene el servicio de iptables
-
+iniciar automaticamente el servicio.
 `scripts/iptables-service start|stop|restart`
 
 para que el servicio cargue automaticamente al iniciar el sistema
 este debe ser cargado con:
-
 `sudo update-rc.d iptables-service defaults`
 
-`command/addhost <alias> <tipo:domain|ip> <hostname|ip> <regla:deny|allow>`
 comandos para permitir o bloquear un dominio o una ip
+`command/addhost <alias> <tipo:domain|ip> <hostname|ip> <regla:deny|allow>`
 
-`command/addport <alias> [protocolo:tcp|udp] <port> <regla:deny|allow>`
 comando para permitir o bloquear un puerto y su protocolo
+`command/addport <alias> [protocolo:tcp|udp] <port> <regla:deny|allow>`
 
 ##configuración
 
