@@ -10,18 +10,18 @@ para entornos LINUX/UNIX Like, esto lo hace potente, rapido y liviano ademas de 
 
 comandos basicos
 
-scripts/start
+`scripts/start`
 inicia el servicio de iptables
 
-scripts/stop
+`scripts/stop`
 detiene el servicio de iptables
 
-scripts/iptables-service
+`scripts/iptables-service start|stop|restart`
 para que el servicio cargue automaticamente al iniciar el sistema
 este debe ser cargado con:
-sudo update-rc.d iptables-service defaults
+`sudo update-rc.d iptables-service defaults`
 
-command/insert <name> <domain|ip> <hostname> <deny|allow>
+`command/insert <name> <domain|ip> <hostname> <deny|allow>`
 comandos para permitir o bloquear
 
 configuracion
@@ -80,7 +80,7 @@ init.d/reset
 este archivo define por defecto los parametros iniciales de iptables generalmente no es necesario modificarlo
 a menos que se necesite hacer algo especial.
 
-utils/getsubnet
+`utils/getsubnet`
 
 esta utilidad te permitira obtener las ip o subredes de un dominio.
 esta utilidad es ocupada por los comandos que incluye esta herramienta.
