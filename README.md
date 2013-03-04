@@ -20,11 +20,11 @@ este debe ser cargado con:
 
 `sudo update-rc.d iptables-service defaults`
 
-`command/domain <alias> <domain|ip> <hostname|ip> <deny|allow>`
+`command/addhost <alias> <**domain|**ip> <hostname|ip> <**deny|**allow>`
 
 comandos para permitir o bloquear un dominio o una ip
 
-`command/port <alias> [protocolo:tcp|udp] <port> <deny|allow>`
+`command/addport <alias> [protocolo:**tcp|**udp] <port> <**deny|**allow>`
 
 ##configuración
 
