@@ -1,0 +1,42 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          firewall
+# Required-Start:    $local_fs $all killprocs
+# Required-Stop:
+# Default-Start:     1
+# Default-Stop:
+# Short-Description: execute a lot of scripts strucured for iptables.
+### END INIT INFO
+
+PATH=/sbin:/bin:/usr/bin
+
+. /lib/lsb/init-functions
+
+DIR=$(dirname $0)
+
+do_start () {
+	log_action_msg "initializing firewall iptables"
+	$DIR/start
+}
+
+do_stop () {
+	log_action_msg "stoping firewall iptables"
+	$DIR/stop
+}
+
+case "$1" in
+  start)
+	do_start
+	;;
+  restart)
+	do_stop
+    do_start
+	;;
+  stop)
+	do_stop
+	;;
+  *)
+	echo "Usage: $0 start|stop|restart" >&2
+	exit 3
+	;;
+esac

@@ -1,0 +1,17 @@
+#!/bin/bash
+PATH=/sbin:/bin:/usr/bin
+DIR=$(dirname $0)
+
+. $DIR/../init.d/config
+
+. $DIR/../init.d/reset
+. $DIR/../init.d/policy
+. $DIR/../init.d/nat
+
+for deny in $(ls -1 $DIR/../rules.d/deny); do
+ . $DIR/../rules.d/deny/$deny
+done
+
+for allow in $(ls -1 $DIR/../rules.d/allow); do
+ . $DIR/../rules.d/allow/$allow;
+done

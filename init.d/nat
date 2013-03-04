@@ -1,0 +1,1 @@
+iptables -t nat -A POSTROUTING -o eth0 -s $LAN_NET/$LAN_MASK -j MASQUERADE

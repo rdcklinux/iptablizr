@@ -1,0 +1,1 @@
+iptables -I INPUT -i $INET_IFACE -p tcp --dport 65022 -j ACCEPT

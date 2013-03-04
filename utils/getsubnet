@@ -1,0 +1,15 @@
+#!/bin/bash
+domain=$1
+server=whois.radb.net
+
+ips=$(host $domain|grep 'has address'|awk '{print $4}')
+
+oneip=$(echo -n $ips|awk '{print $1}')
+
+origin=$(whois -h $server $oneip|grep origin|awk '{print $2}')
+
+if [[ $origin != '' ]]; then
+ whois -h $server -- "-K -r -T route -i origin $origin"|grep route|awk '{print $2}'
+else
+ echo $ips
+fi

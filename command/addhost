@@ -1,0 +1,52 @@
+#!/bin/bash
+DIR=$(dirname $0)
+
+name=$1
+what=$2
+destination=$3
+action=$4
+
+if [[ $action == 'deny' ]]; then
+ chain='DROP'
+elif [[ $action == 'allow' ]]; then
+ chain='ACCEPT'
+fi
+
+config=$DIR/../rules.d/$action/$name
+
+if [ -e $config ]; then
+ echo "ya existe esta configuracion"
+ exit
+fi
+
+echo -n '' > $config
+
+if [[ $what == 'domain' ]]; then
+  $DIR/../utils/getsubnet $destination > $DIR/../subnet/$destination
+  lines=$(wc -l $DIR/../subnet/$destination|awk '{print $1}')
+  if [[ $lines == 1 ]];then
+    record=$(cat $DIR/../subnet/$destination|awk '{print $2}')
+    if [[ record == '' ]]; then
+      record=$(cat $DIR/../subnet/$destination|awk '{print $1}')
+      rm $DIR/../subnet/$destination;
+      destination=$record
+      what='ip'
+    fi
+  fi
+fi
+
+if [[ $what == 'domain' ]]; then
+  echo "iptables -N ${chain}_$name" >> $config
+  echo "for subnet in \$(cat \$DIR/../subnet/$destination); do" >> $config
+  echo " iptables -A ${chain}_$name -o \$INET_IFACE -d \$subnet -j $chain" >> $config
+  echo 'done' >> $config
+  echo "iptables -I FORWARD -o \$INET_IFACE -j ${chain}_$name" >> $config
+fi
+
+if [[ $what == 'ip' ]]; then
+  ip=$(host $destination|grep 'has address'|head -1 --|awk '{print $4}')
+  if [[ $ip == '' ]]; then
+    ip=$destination
+  fi
+  echo "iptables -I FORWARD -i \$INET_IFACE -d $ip -j $chain" >> $config
+fi

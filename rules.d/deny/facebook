@@ -1,0 +1,5 @@
+iptables -N DROP_FACEBOOK
+for subnet in $(cat $DIR/../subnet/facebook.com); do
+ iptables -A DROP_FACEBOOK -o $INET_IFACE -d $subnet -j DROP
+done
+iptables -I FORWARD -o $INET_IFACE -j DROP_FACEBOOK

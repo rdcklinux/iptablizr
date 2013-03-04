@@ -1,0 +1,5 @@
+iptables -N DROP_youtube
+for subnet in $(cat $DIR/../subnet/youtube.com); do
+ iptables -A DROP_youtube -o $INET_IFACE -d $subnet -j DROP
+done
+iptables -I FORWARD -o $INET_IFACE -j DROP_youtube
