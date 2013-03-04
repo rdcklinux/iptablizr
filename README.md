@@ -21,9 +21,11 @@ este debe ser cargado con:
 `sudo update-rc.d iptables-service defaults`
 
 `command/addhost <alias> <tipo:domain|ip> <hostname|ip> <regla:deny|allow>`
-
 comandos para permitir o bloquear un dominio o una ip
+
 `command/addport <alias> [protocolo:tcp|udp] <port> <regla:deny|allow>`
+comando para permitir o bloquear un puerto y su protocolo
+
 ##configuración
 
 ###init.d/config
