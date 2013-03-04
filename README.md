@@ -23,9 +23,9 @@ este debe ser cargado con:
 `command/addhost <alias> <**domain**|**ip**> <hostname|ip> <**deny**|**allow**>`
 
 comandos para permitir o bloquear un dominio o una ip
-
-`command/addport <alias> [protocolo:**tcp**|**udp**] <port> <**deny**|**allow**>`
-
+```
+command/addport <alias> [protocolo:**tcp**|**udp**] <port> <**deny**|**allow**>
+```
 ##configuración
 
 ###init.d/config
