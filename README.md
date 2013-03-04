@@ -20,9 +20,11 @@ este debe ser cargado con:
 
 `sudo update-rc.d iptables-service defaults`
 
-`command/insert <name> <domain|ip> <hostname> <deny|allow>`
+`command/domain <alias> <domain|ip> <hostname|ip> <deny|allow>`
 
-comandos para permitir o bloquear
+comandos para permitir o bloquear un dominio o una ip
+
+`command/port <alias> [protocolo:tcp|udp] <port> <deny|allow>`
 
 ##configuración
 
@@ -89,11 +91,20 @@ a menos que se necesite hacer algo especial.
 esta utilidad te permitira obtener las ip o subredes de un dominio.
 esta utilidad es ocupada por los comandos que incluye esta herramienta.
 
-Estructura de Directorios
+##Estructura de Directorios
 
 ###rules.d/allow
 
-default
-   comandos iptables por defecto para la regla de permitir
-   otros archivos que se encuentren en este directorio son reglas para permitir servicios, dominios, etc..
+####default
    
+   comandos iptables por defecto para la regla de permitir
+
+otros archivos que se encuentren en este directorio son reglas para permitir servicios, dominios, etc..
+
+###rules.d/deny
+
+####default
+   comando iptables por defecto para laregla de denegar
+
+otros archivos que se encuentren en este directorio son reglas para denegar servicio, dominios, etc...
+
