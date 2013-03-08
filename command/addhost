@@ -1,5 +1,5 @@
 #!/bin/bash
-DIR=$(dirname $0)
+DIR=$(dirname $(readlink -f $0))
 
 name=$(echo -n $1|awk '{print toupper($_)}')
 what=$2
