@@ -12,7 +12,7 @@ PATH=/sbin:/bin:/usr/bin
 
 . /lib/lsb/init-functions
 
-DIR=$(dirname $0)
+DIR=$(dirname $(readlink -f $0))
 
 do_start () {
 	log_action_msg "initializing firewall iptables"
