@@ -114,6 +114,6 @@ otros archivos que se encuentren en este directorio son reglas para denegar serv
 sugerencias o nuevas ideas son todas bienvenidas.
 
 ##ToDo
-
-1. interfaz web sencilla para manipular los scripts y comandos
-2. README.md in English
+1. obtener INET_IP, LAN_IP, LAN_NET y LAN_MASK de forma automática
+2. interfaz web sencilla para manipular los scripts y comandos
+3. README.md in English
