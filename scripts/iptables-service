@@ -30,7 +30,7 @@ case "$1" in
 	;;
   restart)
 	do_stop
-    do_start
+	do_start
 	;;
   stop)
 	do_stop
