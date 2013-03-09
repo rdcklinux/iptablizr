@@ -1,2 +1,2 @@
-iptables -A INPUT -j ACCEPT
+#iptables -A INPUT -j ACCEPT
 iptables -A FORWARD -j ACCEPT
